@@ -79,6 +79,9 @@ alias qdhcp='k -n ddiaas-dhcp-endpoint'
 alias qdhcpx='qdhcp exec -it'
 alias qdhcpl='qdhcp logs'
 
+alias qdnsready="qdns get pod -o jsonpath='{range .status.containerStatuses[*]}{\"Name: \"}{.name}{\"\tReady: \"}{.ready}{\"\n\"}'"
+alias qdhcpready="qdhcp get pod -o jsonpath='{range .status.containerStatuses[*]}{\"Name: \"}{.name}{\"\tReady: \"}{.ready}{\"\n\"}'"
+
 # mc: go install github.com/jonnylangefeld/kubectl-mc@latest
 alias mc='kubectl mc'
 alias mcls='mc -l'
