@@ -187,24 +187,10 @@ function qemepcusvc() {
   fi
 }
 
-# Function to list all endpoints with their cspAccountId and universalServiceId
-function list_all_endpoints() {
-  # Get all EPCs and extract their names, cspAccountId and universalServiceId
-  local output=""
-
-  # Use yaml output for consistent parsing
-  local epcs=$(qepc -o yaml)
-
-  # Check if there are any EPCs
-  if [ -z "$epcs" ]; then
-    echo "No EPCs found"
-    return 1
-  fi
-
-  # Use yq to extract the relevant fields for each EPC
-  echo "ENDPOINT-ID                         UNIVERSAL-SERVICE-ID                REALM       CSP-ACCOUNT-ID                OPHID"
-  echo "-----------------------------------------------------------------------------------------------------------------------------------------------------"
-  yq -r '.items[] | .spec.endpointId + "    " + .spec.universalServiceId + "    " + .spec.realm + "     " + .spec.cspAccountId' + "     " + .spec.ophId - <<< "$epcs" | sort
+list_all_endpoints() {
+  printf "ENDPOINT-ID\t\t\tUNIVERSAL-SERVICE-ID\t\t\tREALM\t\t\tCSP-ACCOUNT-ID\t\t\tOPHID\n"
+  printf "--------------------------------------------------------------------------------\n"
+  qepc -A -o jsonpath='{range .items[*]}{.spec.endpointId}{"\t"}{.spec.universalServiceId}{"\t"}{.spec.realm}{"\t"}{.spec.cspAccountId}{"\t"}{.spec.ophId}{"\n"}{end}'
 }
 
 alias qlep="list_all_endpoints"
