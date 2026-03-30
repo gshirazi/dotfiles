@@ -13,10 +13,10 @@ func tplogin() {
 alias tp1='tplogin env-1'
 alias tp2='tplogin us-dev-2'
 alias tp4='tplogin env-4'
-alias tp5='tplogin env-5'
-alias tpp='tplogin prd-1'
+alias tp5='tplogin us-dev-5'
+alias tpp='tplogin us-com-1'
 alias tp0='tpp'
-alias tps='tplogin stg-1'
+alias tps='tplogin us-stg-1'
 alias tpbox4='tplogin box-4'
 alias tpdd='tplogin ddi-dev-use1'
 alias tpdq='tplogin ddi-qa-use1'
@@ -24,13 +24,6 @@ alias tpqaps1='tplogin ddi-qa-aps1'
 alias tpd2a='tpd2'
 alias tpd4='tplogin ddi-qa-ase1'
 alias tpb4='tplogin box-4'
-
-
-alias tpd2='tplogin us-dev-2'
-alias tpd4='tplogin us-dev-4'
-alias tpd5='tplogin us-dev-5'
-alias tpss='tplogin us-stg-1'
-
 
 alias tpdaps='tplogin ddi-dev-aps1'
 alias tpdase='tpologin ddi-dev-ase1'
