@@ -162,6 +162,7 @@ alias qepc1='qepc | awk "{print \$1}"'
 alias qeml='qem logs'
 alias qemx='qem exec -it'
 
+# if these are not working: brew unlink python-yq && brew install yq
 # Function to get endpointId by universalServiceId
 function qemepcusvc() {
   if [ -z "$1" ]; then
@@ -207,4 +208,3 @@ function list_all_endpoints() {
 }
 
 alias qlep="list_all_endpoints"
-
