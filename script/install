@@ -12,7 +12,7 @@ brew bundle
 # find the installers and run them iteratively
 # find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
 
-WANT_INSTALL="zsh/plugins docker k8s vbox vscode"
+WANT_INSTALL="zsh/plugins k3d k8s vbox vscode"
 for f in ${WANT_INSTALL}; do
     echo "configuring dotfiles for $f ..."
     ./$f/install.sh
